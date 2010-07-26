@@ -1,0 +1,9 @@
+[RB Plugin]
+Loader=python
+Module=id3unicode
+IAge=1
+Name=ID3 Unicode
+Description=This plugin converts unreadable tis-620 ( and others in the future ) id3 tag to readable utf-8 id3 tag on-the-fly.
+Authors=Phongsathorn Eakamongul <phong.ek@gmail.com>
+Copyright=Copyright © 2010 dsin
+Website=http://dsin.blogspot.com
