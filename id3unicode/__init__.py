@@ -30,6 +30,14 @@ class Id3UnicodePlugin (rb.Plugin):
         type=entry.get_entry_type()
         if type==self.type_song:
          if not self.modified_entry :
+                 song_location = urllib.unquote(self.db.entry_get(entry, rhythmdb.PROP_LOCATION))
+
+                 try:
+                         urllib.urlopen(song_location)
+                 except :
+                         print "file not found : %s" % song_location
+                         return
+
                  title = self.db.entry_get(entry, rhythmdb.PROP_TITLE)
                  artist = self.db.entry_get(entry, rhythmdb.PROP_ARTIST)
                  album = self.db.entry_get(entry, rhythmdb.PROP_ALBUM)
@@ -39,7 +47,7 @@ class Id3UnicodePlugin (rb.Plugin):
                  self.db.entry_delete(entry)
                  self.db.commit()
                  
-                 entry_new = self.db.entry_new(self.type_song, urllib.unquote(self.db.entry_get(entry, rhythmdb.PROP_LOCATION)))
+                 entry_new = self.db.entry_new(self.type_song, song_location)
                  self.db.set(entry_new, rhythmdb.PROP_TITLE, detect_charset(title, self.id3_configure_dialog.get_prefs()))
                  print 'set title'
                  self.db.set(entry_new, rhythmdb.PROP_ARTIST, detect_charset(artist, self.id3_configure_dialog.get_prefs()))
