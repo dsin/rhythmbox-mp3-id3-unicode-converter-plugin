@@ -7,7 +7,7 @@ This project is no longer support by developer.
 
 Introduction
 -------------------------
-This is Rhythmbox(`https://wiki.gnome.org/Apps/Rhythmbox`) Plugin that convert unreadable id3 tag to readable utf-8 id3 tag on-the-fly.
+This is Rhythmbox(https://wiki.gnome.org/Apps/Rhythmbox) Plugin that convert unreadable id3 tag to readable utf-8 id3 tag on-the-fly.
 
 Which languages are supported right now ?
 -------------------------
